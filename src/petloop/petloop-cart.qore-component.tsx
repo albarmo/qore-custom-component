@@ -1,4 +1,4 @@
-import { registerComponent } from "@qorebase/app-cli";
+import { registerComponent } from '@qorebase/app-cli'
 import React from 'react'
 import {
   Box,
@@ -14,7 +14,7 @@ import {
   GridItem,
   Skeleton,
   Center,
-  Checkbox
+  Checkbox,
 } from '@chakra-ui/react'
 
 const url = 'https://staging-qore-data-teacher-593643.qore.dev'
@@ -72,21 +72,21 @@ function Item(props) {
               operation: 'Select',
               instruction: {
                 table: 'carts',
-                name: "data",
+                name: 'data',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
+                    $eq: 'Draft',
                   },
                 },
               },
-            }
-          ]
-        }
+            },
+          ],
+        },
       })
 
       if (!response.data.results.data.length) {
-        throw new Error("Cart tidak ditemukan!")
+        throw new Error('Cart tidak ditemukan!')
       }
 
       const cart = response.data.results.data[0]
@@ -102,31 +102,31 @@ function Item(props) {
               operation: 'Update',
               instruction: {
                 table: 'carts',
-                name: "UpdateCart",
+                name: 'UpdateCart',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
-                  }
+                    $eq: 'Draft',
+                  },
                 },
                 set: {
-                  total_price: (Number(cart.total_price) + Number(item.price)),
-                  grand_total: (Number(cart.total_price) + Number(item.price)),
-                }
+                  total_price: Number(cart.total_price) + Number(item.price),
+                  grand_total: Number(cart.total_price) + Number(item.price),
+                },
               },
             },
             {
               operation: 'Update',
               instruction: {
                 table: 'cart_items',
-                name: "UpdateCartItem",
+                name: 'UpdateCartItem',
                 condition: {
                   id: itemId,
                 },
                 set: {
                   qty: qty + 1,
                   subtotal: Number(item.price) * (qty + 1),
-                }
+                },
               },
             },
           ],
@@ -154,21 +154,21 @@ function Item(props) {
               operation: 'Select',
               instruction: {
                 table: 'carts',
-                name: "data",
+                name: 'data',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
+                    $eq: 'Draft',
                   },
                 },
               },
-            }
-          ]
-        }
+            },
+          ],
+        },
       })
 
       if (!response.data.results.data.length) {
-        throw new Error("Cart tidak ditemukan!")
+        throw new Error('Cart tidak ditemukan!')
       }
 
       const cart = response.data.results.data[0]
@@ -184,31 +184,31 @@ function Item(props) {
               operation: 'Update',
               instruction: {
                 table: 'carts',
-                name: "UpdateCart",
+                name: 'UpdateCart',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
-                  }
+                    $eq: 'Draft',
+                  },
                 },
                 set: {
-                  total_price: (Number(cart.total_price) - Number(item.price)),
-                  grand_total: (Number(cart.total_price) - Number(item.price)),
-                }
+                  total_price: Number(cart.total_price) - Number(item.price),
+                  grand_total: Number(cart.total_price) - Number(item.price),
+                },
               },
             },
             {
               operation: 'Update',
               instruction: {
                 table: 'cart_items',
-                name: "UpdateCartItem",
+                name: 'UpdateCartItem',
                 condition: {
                   id: itemId,
                 },
                 set: {
                   qty: qty - 1,
                   subtotal: Number(item.price) * (qty - 1),
-                }
+                },
               },
             },
           ],
@@ -236,21 +236,21 @@ function Item(props) {
               operation: 'Select',
               instruction: {
                 table: 'carts',
-                name: "data",
+                name: 'data',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
+                    $eq: 'Draft',
                   },
                 },
               },
-            }
-          ]
-        }
+            },
+          ],
+        },
       })
 
       if (!response.data.results.data.length) {
-        throw new Error("Cart tidak ditemukan!")
+        throw new Error('Cart tidak ditemukan!')
       }
 
       const cart = response.data.results.data[0]
@@ -266,24 +266,26 @@ function Item(props) {
               operation: 'Update',
               instruction: {
                 table: 'carts',
-                name: "UpdateCart",
+                name: 'UpdateCart',
                 condition: {
                   id: item.cart,
                   status: {
-                    $eq: "Draft"
-                  }
+                    $eq: 'Draft',
+                  },
                 },
                 set: {
-                  total_price: (Number(cart.total_price) - (Number(item.price) * qty)),
-                  grand_total: (Number(cart.total_price) - (Number(item.price) * qty)),
-                }
+                  total_price:
+                    Number(cart.total_price) - Number(item.price) * qty,
+                  grand_total:
+                    Number(cart.total_price) - Number(item.price) * qty,
+                },
               },
             },
             {
               operation: 'Delete',
               instruction: {
                 table: 'cart_items',
-                name: "DeleteCartItem",
+                name: 'DeleteCartItem',
                 condition: {
                   id: itemId,
                 },
@@ -315,10 +317,10 @@ function Item(props) {
                 table: 'cart_items',
                 name: 'UpdateCartItem',
                 condition: {
-                  id: itemId
+                  id: itemId,
                 },
                 set: {
-                  is_selected: checked
+                  is_selected: checked,
                 },
               },
             },
@@ -337,7 +339,7 @@ function Item(props) {
 
   return (
     <Box
-      borderColor={{ base: "gray.200", md: "none" }}
+      borderColor={{ base: 'gray.200', md: 'none' }}
       key={itemId}
       bg="#FFFFFF"
       borderRadius="4px"
@@ -346,8 +348,8 @@ function Item(props) {
         <Flex alignItems={'center'}>
           <Box p={2}>
             <Image
-              boxSize='60px'
-              objectFit='cover'
+              boxSize="60px"
+              objectFit="cover"
               src={imageSource}
               alt={title}
             />
@@ -364,7 +366,7 @@ function Item(props) {
               onChange={(e) => selectProduct(e.target.checked)}
               pl={2}
             > */}
-            <Text fontSize="sm" noOfLines={2} >
+            <Text fontSize="sm" noOfLines={2}>
               {title}
             </Text>
             {/* </Checkbox> */}
@@ -374,7 +376,7 @@ function Item(props) {
                 fontSize="sm"
                 noOfLines={1}
                 fontWeight="bold"
-                color='blue.500'
+                color="blue.500"
                 mt={2}
               >
                 {price}
@@ -390,7 +392,7 @@ function Item(props) {
               </Text>
             </Flex>
 
-            <Text fontSize="sm" fontWeight={'semibold'} noOfLines={1} >
+            <Text fontSize="sm" fontWeight={'semibold'} noOfLines={1}>
               {storeName}
             </Text>
 
@@ -399,7 +401,8 @@ function Item(props) {
                 borderColor="gray.200"
                 isChecked={isSelected}
                 disabled={loading}
-                onChange={(e) => selectProduct(e.target.checked)}></Checkbox>
+                onChange={(e) => selectProduct(e.target.checked)}
+              ></Checkbox>
               <HStack pb={2}>
                 <Button
                   size={'sm'}
@@ -407,13 +410,17 @@ function Item(props) {
                   color={'#FFF'}
                   onClick={remove}
                   disabled={loading}
-                >x</Button>
+                >
+                  x
+                </Button>
                 <Button
                   size={'sm'}
-                  colorScheme='blue'
+                  colorScheme="blue"
                   onClick={decrement}
                   disabled={qty == 1 || loading}
-                >-</Button>
+                >
+                  -
+                </Button>
                 <Input
                   size={'sm'}
                   value={qty}
@@ -424,10 +431,12 @@ function Item(props) {
                 />
                 <Button
                   size={'sm'}
-                  colorScheme='blue'
+                  colorScheme="blue"
                   onClick={increment}
                   disabled={item.quantity == qty || loading}
-                >+</Button>
+                >
+                  +
+                </Button>
               </HStack>
               {/* <HStack pb={2}>
                 <Button
@@ -482,35 +491,39 @@ const LoaderItem: React.FC = () => (
       </Center>
     </GridItem>
   </Grid>
-);
+)
 
-export default registerComponent("Petloop Cart", {
-  type: "list",
-  icon: "IconX",
-  group: "list",
+export default registerComponent('Petloop Cart', {
+  type: 'list',
+  icon: 'IconX',
+  group: 'list',
   defaultProps: {
-    header: "List",
-    imageSource: "https://via.placeholder.com/150",
-    title: "Title",
-    price: "Price",
-    stock: "0",
-    storeName: "Store Name",
+    header: 'List',
+    imageSource: 'https://via.placeholder.com/150',
+    title: 'Title',
+    price: 'Price',
+    stock: '0',
+    storeName: 'Store Name',
     // actionIncrement: { type: 'none' },
     // actionDecrement: { type: 'none' },
     // actionRemove: { type: 'none' },
   },
   propDefinition: {
     header: {
-      type: "string",
+      type: 'string',
       options: {
-        format: "text",
+        format: 'text',
       },
     },
-    imageSource: { group: "Thumbnail", type: "string", options: { format: "text" } },
-    title: { group: "Design", type: "string", options: { format: "text" } },
-    price: { group: "Design", type: "string", options: { format: "text" } },
-    stock: { group: "Design", type: "string", options: { format: "text" } },
-    storeName: { group: "Design", type: "string", options: { format: "text" } },
+    imageSource: {
+      group: 'Thumbnail',
+      type: 'string',
+      options: { format: 'text' },
+    },
+    title: { group: 'Design', type: 'string', options: { format: 'text' } },
+    price: { group: 'Design', type: 'string', options: { format: 'text' } },
+    stock: { group: 'Design', type: 'string', options: { format: 'text' } },
+    storeName: { group: 'Design', type: 'string', options: { format: 'text' } },
     // actionIncrement: {
     //   group: 'Action',
     //   type: 'action',
@@ -542,19 +555,18 @@ export default registerComponent("Petloop Cart", {
               <LoaderItem />
             ))}
         </Stack>
-      );
+      )
     }
 
     return (
       <Box padding="8px" pt="0" mt="0" h="min-content">
-        <Box
-          p={2}
-          pt={4}
-          pb={4}
-        >
+        <Box p={2} pt={4} pb={4}>
           <SimpleGrid columns={1} spacing={2}>
             {rows.map((item) => (
-              <props.components.ListItemVariables key={item.id} variables={item}>
+              <props.components.ListItemVariables
+                key={item.id}
+                variables={item}
+              >
                 <Item key={item.id} item={item} {...props} />
               </props.components.ListItemVariables>
             ))}
@@ -562,5 +574,5 @@ export default registerComponent("Petloop Cart", {
         </Box>
       </Box>
     )
-  }
+  },
 })
