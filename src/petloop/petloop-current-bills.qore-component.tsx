@@ -23,6 +23,7 @@ import {
   useNumberInput,
   IconButton,
   VStack,
+  Image,
 } from '@chakra-ui/react'
 import { registerComponent } from '@qorebase/app-cli'
 import React from 'react'
@@ -57,11 +58,10 @@ const Item = (
 
   const itemName =
     item.product_name || item.medical_name || item.appointment_service
-
   const itemPrice =
     item.product_price || item.medical_price || item.appointment_price || 0
-
   const itemStock = item.product_stock || item.medical_stock || 1
+  const image = item.product_image || item.medical_image || item.service_image
 
   const {
     getInputProps,
@@ -155,18 +155,34 @@ const Item = (
           cursor="pointer"
         >
           <Flex w="full" justifyContent="space-between">
-            <HStack>
-              <VStack w={['100%', 'full', '100%']}>
-                <Text
-                  fontSize="sm"
-                  noOfLines={5}
-                  fontWeight="semibold"
-                  textAlign="left"
-                >
-                  {input['aria-valuenow']} x {itemName}
-                </Text>
-              </VStack>
-            </HStack>
+            <Image
+              src={`https://${image}`}
+              alt="item"
+              w="60px"
+              h="60px"
+              rounded={'sm'}
+              fallbackSrc="https://via.placeholder.com/150"
+            />
+            <VStack w={['120px', 'full', '100%']} textAlign="left" ml="5">
+              <Text
+                fontSize="sm"
+                noOfLines={4}
+                fontWeight="semibold"
+                textAlign="left"
+                w={'full'}
+              >
+                {itemName}
+              </Text>
+              <Text
+                w={'full'}
+                fontSize="xs"
+                textAlign="left"
+                fontWeight="normal"
+                color="gray.600"
+              >
+                {input['aria-valuenow']} x {formatRupiah(itemPrice)}
+              </Text>
+            </VStack>
             <Text
               fontSize="md"
               fontWeight="semibold"
@@ -177,15 +193,6 @@ const Item = (
               {formatRupiah(totalItemPrice)}
             </Text>
           </Flex>
-          <Text
-            fontSize="xs"
-            w="40%"
-            textAlign="left"
-            fontWeight="normal"
-            color="gray.600"
-          >
-            @{formatRupiah(itemPrice)}
-          </Text>
         </ListItem>
       </PopoverTrigger>
       <PopoverContent>
@@ -257,17 +264,6 @@ const BillComponent = registerComponent('Bills', {
     const billId = props.hooks.useTemplate(props.properties.billId)
 
     const { rows: data, loading, error, revalidate } = props.data.component
-    // const { data = [], status, revalidate } = sourceHooks.useFetchList({
-    //   ...props.source.params,
-    //   ...(props.source.sorts.field
-    //     ? {
-    //         orderBy: {
-    //           [props.source.sorts.field]: props.source.sorts.type,
-    //         },
-    //       }
-    //     : null),
-    // })
-
     const [bill, setBill] = React.useState<any | null>()
     const [downPayment, setDownPayment] = React.useState<number>(0)
 
