@@ -1,0 +1,52 @@
+Arguments: 
+  /Users/albarms/.nvm/versions/node/v16.2.0/bin/node /Users/albarms/.nvm/versions/node/v16.2.0/bin/yarn add @qorebase/custom-component-cli
+
+PATH: 
+  /Users/albarms/opt/anaconda3/bin:/Users/albarms/opt/anaconda3/condabin:/Users/albarms/.nvm/versions/node/v16.2.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.2.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@qorebase%2fcustom-component-cli: Not found
+      at Request.params.callback [as _callback] (/Users/albarms/.nvm/versions/node/v16.2.0/lib/node_modules/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/Users/albarms/.nvm/versions/node/v16.2.0/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (node:events:365:28)
+      at Request.<anonymous> (/Users/albarms/.nvm/versions/node/v16.2.0/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (node:events:365:28)
+      at IncomingMessage.<anonymous> (/Users/albarms/.nvm/versions/node/v16.2.0/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (node:events:471:28)
+      at IncomingMessage.emit (node:events:377:35)
+      at endReadableNT (node:internal/streams/readable:1312:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "petloop-custom-components",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "typescript": "^4.6.3"
+    },
+    "dependencies": {
+      "@qorebase/app-cli": "^1.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
