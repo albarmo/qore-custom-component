@@ -1,0 +1,39 @@
+{
+  "id": "1d636f5a-2800-4973-ae2d-65457570cd69",
+  "data": {
+    "id": "631aebbd7e863e7ce6869e2e",
+    "items": [
+      {
+        "name": "ErgaPods Basic Box",
+        "price": 750000,
+        "quantity": 1
+      }
+    ],
+    "amount": 750000,
+    "status": "PAID",
+    "created": "2022-09-09T07:31:09.836Z",
+    "is_high": false,
+    "paid_at": "2022-09-09T07:31:24.277Z",
+    "updated": "2022-09-09T07:31:24.461Z",
+    "user_id": "626035cd1f63465c4365ef07",
+    "currency": "IDR",
+    "bank_code": "BRI",
+    "description": "Checkout-27-[object Object]",
+    "external_id": "27",
+    "paid_amount": 750000,
+    "payer_email": "albar@feedloop.io",
+    "merchant_name": "AMODA",
+    "initial_amount": 750000,
+    "payment_method": "BANK_TRANSFER",
+    "payment_channel": "BRI",
+    "payment_destination": "1328215358915",
+    "failure_redirect_url": "https://amoda-apps.qore.dev/page",
+    "success_redirect_url": "https://amoda-apps.qore.dev/page/Bck"
+  },
+  "channel": "8e2be74e-b00f-48a6-8f73-cd0609e30ef9_5b6c1147-bff1-435f-9fd9-1b105dc4f653_Events",
+  "metadata": {
+    "internal": {
+      "timestamp": "Fri Sep 09 2022 07:31:25 GMT+0000 (Coordinated Universal Time)"
+    }
+  }
+}

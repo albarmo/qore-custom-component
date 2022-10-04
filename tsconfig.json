@@ -1,23 +1,5 @@
 {
   "compilerOptions": {
-    // "declaration": true,
-    // "importHelpers": true,
-    // "module": "commonjs",
-    // "outDir": "dist",
-    // "rootDir": "src",
-    // "strict": false,
-    // "target": "es6",
-    // "jsx": "react-jsx",
-    // "jsxImportSource": "@emotion/react",
-    // "experimentalDecorators": true,
-    // "allowJs": true,
-    // "skipLibCheck": true,
-    // "forceConsistentCasingInFileNames": true,
-    // "esModuleInterop": true,
-    // "moduleResolution": "node",
-    // "resolveJsonModule": true,
-    // "isolatedModules": true,
-    // "downlevelIteration": true
     "target": "es6",
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
@@ -32,6 +14,9 @@
     "noImplicitAny": false
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/petloop/in-app-apointment.qore-component.tsx",
+    "saved/walk-in-apointment.qore-component.tsx",
+    "components/petloop-reschedule-medical-appointment.qore-component.tsx"
   ]
 }

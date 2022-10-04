@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        html {
+            font-size: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        a {
+            color: #0087C3;
+            text-decoration: none;
+        }
+
+        body {
+            position: relative;
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            color: #555555;
+            background: #FFFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-family: SourceSansPro;
+            width: 95%;
+        }
+
+        header {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #AAAAAA;
+        }
+
+        #logo {
+            float: left;
+            margin-top: 8px;
+        }
+
+        #logo img {
+            height: 70px;
+        }
+
+        #company {
+            float: right;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+
+        #details {
+            margin-bottom: 50px;
+        }
+
+        #client {
+            padding-left: 6px;
+            float: left;
+        }
+
+
+        h2.name {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        #invoice {
+            float: right;
+            text-align: right;
+        }
+
+        #invoice h1 {
+            color: #0087C3;
+            font-size: 2.4em;
+            line-height: 1em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+        }
+
+        #invoice .date {
+            font-size: 1.1em;
+            color: #777777;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        table th {
+            text-align: right;
+            font-weight: bold;
+            font-size: 16px;
+            white-space: nowrap;
+            font-weight: normal;
+            border-top: 2px solid #0087C3;
+            border-bottom: 2px solid #0087C3;
+            color: #0087C3;
+        }
+
+        table td {
+            text-align: right;
+        }
+
+        table td h3 {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin: 0 0 0.2em 0;
+        }
+
+        table .no {
+            font-size: normal;
+        }
+
+        table .desc {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table .desc-header {
+            text-align: left;
+        }
+
+        table tbody tr:last-child td {
+            border: none;
+        }
+
+        table tfoot td {
+            padding: 10px 20px;
+            background: #FFFFFF;
+            border-bottom: none;
+            white-space: nowrap;
+            border-top: 1px solid #0087C3;
+        }
+
+        table tfoot tr:first-child td {
+            border-top: none;
+        }
+
+        table tfoot tr:last-child td {
+            font-size: normal;
+
+        }
+
+        table tfoot tr td:first-child {
+            border: none;
+        }
+
+        #thanks {
+            font-size: normal;
+            margin-bottom: 50px;
+        }
+
+        #notices {
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;
+        }
+
+        #notices .notice {
+            font-size: normal;
+        }
+
+        .link-petloop-care {
+            font-weight: bold;
+        }
+
+        footer {
+            color: #777777;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid #AAAAAA;
+            padding: 8px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="clearfix">
+        <div id="logo">
+            <img src="https://pbs.twimg.com/profile_images/1484074894522740736/UKouZRRJ_400x400.jpg">
+        </div>
+        <div id="company">
+            <h2 class="name">Invoice</h2>
+            <div>INV {{row.bill_id}}</div>
+        </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div id="details" class="clearfix">
+            <div id="client">
+                <div class="to">Diterbitkan atas nama :</div>
+                <h2 class="name">Penjual : {{row.store_name}}</h2>
+                <div class="address">796 Silver Harbour, TX 79273, US</div>
+            </div>
+
+            <div id="invoice">
+                <div class="to">Untuk :</div>
+                <h2 class="name">Pembeli : Albar Moerhamsa</h2>
+                <div class="address">796 Silver Harbour, TX 79273, US</div>
+            </div>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th class="desc-header">Info Produk</th>
+                    <th class="unit">Jumlah</th>
+                    <th class="qty">Satuan</th>
+                    <th class="total">Total Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for item in row.bill_items %}
+                <tr>
+                    <td class="desc">
+                        {{item.product_name}}
+                        {{item.medical_name}}
+                        {{item.appointment_service}}
+                    </td>
+                    <td class="unit">{{item.quantity}} X Rp {{ item.product_price | decimals: 0,
+                        "id-ID" | prepend: "" }}{{ item.medical_price | decimals: 0, "id-ID" | prepend: ""
+                        }}{{ item.appointment_price | decimals: 0, "id-ID" | prepend: "" }}</td>
+                    <td class="qty">{{item.quantity}}</td>
+                    <td class="total">Rp {{item.grand_total}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="1"></td>
+                    <td colspan="2">Subtotal</td>
+                    <td>Rp {{row.total_price}}</td>
+                </tr>
+                <tr>
+                    <td colspan="1"></td>
+                    <td colspan="2">Uang Muka</td>
+                    <td>Rp {{row.down_payment_amount}}</td>
+                </tr>
+                <tr>
+                    <td colspan="1"></td>
+                    <td colspan="2">Total</td>
+                    <td>Rp {{row.grand_total}}</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div id="details" class="clearfix">
+            <div id="client">
+                <p class="name">Invoice ini diproses oleh komputer silakan hubungi <a class="link-petloop-care">Petloop
+                        Care</a>
+                    apabila kamu membutuhkan bantuan</p>
+            </div>
+            <div id="invoice">
+                <p class="name">Terakhir di update: {{row.date}}</p>
+                <p class="name">Kasir: {{row.cashier_firstname}} {{row.cashier_lastname}}</p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Amoda Maintenance Request</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #fff;
+      }
+
+      header {
+        width: 100%;
+        min-height: 200px;
+        padding-top: 5px;
+        padding-bottom: 40px;
+      }
+
+      footer {
+        padding: 20px 40px;
+      }
+
+      .bg-black {
+        background-color: #000;
+      }
+
+      .bg-white {
+        background-color: #ecf0f1;
+      }
+
+      .bg-primary {
+        background-color: #0c797d;
+      }
+
+      .f-primary {
+        color: #0c797d;
+      }
+
+      .header-logo {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      .align-left {
+        text-align: left;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .f-white {
+        color: #fff;
+      }
+
+      .f-grey {
+        color: #f5f5f5;
+      }
+
+      .bold {
+        font-weight: 600;
+      }
+
+      .mx-auto {
+        margin: 0 auto;
+      }
+
+      .monstrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .box-shadow-wrapper {
+        width: 80%;
+        height: auto;
+        margin: 50px auto;
+      }
+
+      .d-flex {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .box-shadow {
+        padding: 20px;
+        /* box-shadow: 10px 6px 23px -4px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 10px 6px 23px -4px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 6px 23px -4px rgba(0,0,0,0.75); */
+      }
+
+      .py-20 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .pb-10 {
+        padding-bottom: 10px;
+      }
+
+      .mb-20 {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="f-primary">
+      <div class="header-logo">
+        <img
+          src="https://i.ibb.co/cg7BhW2/Amoda-Logo-Set-01.png"
+          alt="Amoda"
+          title="Amoda"
+        />
+      </div>
+      <div class="mx-auto align-center">
+        <h1>Maintenance Request</h1>
+      </div>
+    </header>
+
+    <div class="box-shadow-wrapper">
+      <div
+        style="
+          box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -webkit-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+        "
+        class="box-shadow bg-white mb-20"
+      >
+        <div class="pb-10">
+          <h3 class="f-primary">Property Information</h3>
+          <div class="py-20">
+            <div class="align-left bold pb-10">Maintenance ID</div>
+            <div class="bold f-primary">MTC{{id}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Product Name</div>
+            <div class="bold f-primary">{{product_name}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Product Size</div>
+            <div class="bold f-primary">{{lookup_product_size}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Province</div>
+            <div class="bold f-primary">{{lookup_province}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">City</div>
+            <div class="bold f-primary">{{lookup_city}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">District</div>
+            <div class="bold f-primary">{{lookup_district}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Address</div>
+            <div class="bold f-primary">{{address}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -webkit-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+        "
+        class="box-shadow bg-white mb-20"
+      >
+        <div class="pb-10">
+          <h3 class="f-primary">Maintenance Information</h3>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Submitted Date</div>
+            <div class="bold f-primary">
+              {{created_at | date: " %a, %d %b %Y - %H:%M " }}
+            </div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Proposed Date</div>
+            <div class="bold f-primary">
+              {{date | date: " %a, %d %b %Y - %H:%M " }}
+            </div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">Notes</div>
+            <div class="bold f-primary">{{brief_description_of_issue}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -webkit-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 10px 6px 23px -4px rgba(0, 0, 0, 0.75);
+        "
+        class="box-shadow bg-white mb-20"
+      >
+        <div class="pb-10">
+          <h3 class="f-primary">Request By</h3>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">PIC Name</div>
+            <div class="bold f-primary">{{pic_name}}</div>
+          </div>
+
+          <div class="py-20">
+            <div class="align-left bold pb-10">PIC Number</div>
+            <div class="bold f-primary">{{pic_phone}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-primary f-grey">
+      <div class="footnote-wrapper">
+        <div class="footnote align-center">
+          <p>2022 © Amoda</p>
+        </div>
+        <div class="footnote align-center">
+          <p>
+            High quality construction solutions for modern businesses and
+            individuals.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

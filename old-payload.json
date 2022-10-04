@@ -1,0 +1,20 @@
+{
+  "id": "593f4ed1c3d3bb7f39733d83",
+  "amount": 17500,
+  "status": "PAID",
+  "created": "2020-01-13T02:32:49.827Z",
+  "is_high": false,
+  "paid_at": "2020-01-14T02:32:50.912Z",
+  "updated": "2020-01-13T02:32:50.912Z",
+  "user_id": "5848fdf860053555135587e7",
+  "currency": "IDR",
+  "bank_code": "MANDIRI",
+  "description": "Invoice callback test",
+  "external_id": 105,
+  "paid_amount": 200000,
+  "payer_email": "albar@feedloop.io",
+  "merchant_name": "Xendit",
+  "payment_method": "BANK_TRANSFER",
+  "payment_channel": "MANDIRI",
+  "payment_destination": "8458478548758748"
+}

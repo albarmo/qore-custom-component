@@ -1,0 +1,53 @@
+{
+  "id": "f47d233b-beca-41e6-b925-1eb0effe9248",
+  "data": {
+    "error": {
+      "name": "Error",
+      "stack": "Error: Request failed with status code 500\n    at createError (/usr/src/app/node_modules/@feedloop/qore-client/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/usr/src/app/node_modules/@feedloop/qore-client/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/usr/src/app/node_modules/@feedloop/qore-client/node_modules/axios/lib/adapters/http.js:269:11)\n    at IncomingMessage.emit (events.js:412:35)\n    at endReadableNT (internal/streams/readable.js:1333:12)\n    at processTicksAndRejections (internal/process/task_queues.js:82:21)",
+      "config": {
+        "url": "/v1/execute",
+        "data": "{\"operations\":[{\"operation\":\"Update\",\"instruction\":{\"table\":\"users\",\"name\":\"data\",\"condition\":{\"$and\":[{\"id\":{\"$eq\":\"\"}}]},\"set\":{\"id\":\"\",\"member_id\":\"1381\"}}}]}",
+        "method": "post",
+        "baseURL": "https://staging-qore-data-coat-529649.qore.dev",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "User-Agent": "axios/0.21.4",
+          "Content-Type": "application/json",
+          "Content-Length": 161,
+          "x-qore-engine-admin-secret": "qI1LSVkTcUQP5f4kDpoIvlG70u90OuyD"
+        },
+        "timeout": 0,
+        "cancelToken": {
+          "promise": {}
+        },
+        "transitional": {
+          "forcedJSONParsing": true,
+          "silentJSONParsing": true,
+          "clarifyTimeoutError": false
+        },
+        "maxBodyLength": -1,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "transformRequest": [
+          null
+        ],
+        "transformResponse": [
+          null
+        ]
+      },
+      "message": "Request failed with status code 500"
+    },
+    "input": {
+      "id": "381",
+      "member_id": ""
+    },
+    "member_id": 1381
+  },
+  "channel": "7346c98d-8abe-40f6-b35f-9e75d3f867b6_9ab62b20-616f-49c7-ac35-0b1738a39586_Failed",
+  "metadata": {
+    "internal": {
+      "timestamp": "Mon Oct 03 2022 07:55:00 GMT+0000 (Coordinated Universal Time)"
+    }
+  }
+}
